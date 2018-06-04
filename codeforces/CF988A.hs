@@ -11,16 +11,15 @@ getmsg k msize
   | otherwise   = "NO"
 
 list_as_str :: [Int] -> String
-list_as_str ilist = (concat $ intersperse " " (map show ilist)) 
+list_as_str ilist = concat $ intersperse " " $ map show ilist
   
 main = do
   nkline <- readInts
   numlist <- readInts
   let n = head nkline
   let k = last nkline
-  let nilist = zip numlist [1..n]
-  let mp = M.fromList nilist
-  let msg = getmsg k (M.size $ mp)
+  let mp = M.fromList $ zip numlist [1..n]
+  let msg = getmsg k $ M.size mp
   putStrLn msg
   when (msg == "YES") $ 
-    do putStrLn (list_as_str (snd (unzip (take k (M.toList(mp))))))
+    do putStrLn $ list_as_str $ snd $ unzip $ take k $ M.toList mp
