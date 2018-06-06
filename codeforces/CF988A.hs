@@ -22,4 +22,4 @@ main = do
   let msg = getmsg k $ M.size mp
   putStrLn msg
   when (msg == "YES") $ 
-    do putStrLn $ list_as_str $ snd $ unzip $ take k $ M.toList mp
+    do putStrLn . list_as_str $ snd . unzip . take k $ M.toList mp

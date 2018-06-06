@@ -3,3 +3,7 @@
 *.o
 *.hi
 a.out
+*.txt
+*.in
+*.out
+*.dat
