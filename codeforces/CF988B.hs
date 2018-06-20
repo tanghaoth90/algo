@@ -14,7 +14,7 @@ main = do
   let judge = foldl (&&) True $ map subpair pstrs
   if judge 
     then do putStrLn "YES";
-	        mapM_ putStrLn sstrs
+            mapM_ putStrLn sstrs
     else do putStrLn "NO"
   
   
