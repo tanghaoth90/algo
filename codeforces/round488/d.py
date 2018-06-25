@@ -15,3 +15,9 @@ pa2 = [(inp2[i*2], inp2[i*2+1]) for i in range(m)]
 
 pos = filter(lambda item: itisok(item, pa1, pa2), range(1,10))
 print pos
+if len(pos) == 0:
+	print -1
+elif len(pos) == 1:
+	print pos[0]
+else:
+	print 0
