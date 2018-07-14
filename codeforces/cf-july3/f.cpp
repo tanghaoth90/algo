@@ -15,13 +15,6 @@ unsigned stringhash(const char *str) {
     return hash;
 }
 
-bool checkeq(int f1, int f2, int m) {
-	for (int i = 0; i < m; i++)
-		if (!sseq[f1+i][f2+i])
-			return false;
-	return true;
-}
-
 int main() {
 	int n;
 	cin >> n;
@@ -49,7 +42,7 @@ int main() {
 		for (int i = 0; i+j < n; i++) {
 			int appears = 0;
 			for (int k = i+j+1; k+j < n; k++)
-				if (h[i][j] == h[k][j] && checkeq(i, k, j)) {
+				if (h[i][j] == h[k][j]) {
 					appears ++;
 					k = k+j;
 				}
